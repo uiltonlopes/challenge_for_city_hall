@@ -1,3 +1,27 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "vendors/nprogress/nprogress";
+@import "vendors/animate.css/animate.min";
+@import "vendors/datatables.net-bs/css/dataTables.bootstrap.min";
+@import "vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min";
+@import "vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min";
+@import "vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min";
+@import "vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min";
+@import "vendors/pnotify/dist/pnotify";
+@import "vendors/pnotify/dist/pnotify.buttons";
+@import "vendors/pnotify/dist/pnotify.nonblock";
+@import "vendors/bootstrap-daterangepicker/daterangepicker";
+@import "css/custom";
+@import "sweetalert2";
+
+
+ .action_table {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 40px !important;
+ }
+
+.dataTable > thead > tr > th[class*="action_table"]:after{
+    content: "" !important;
+}

@@ -9,6 +9,11 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'jquery-rails'
 
+gem 'rails-sweetalert2-confirm'
+gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
+# Datatable
+gem 'ajax-datatables-rails'
+
 gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

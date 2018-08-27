@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>ChallengeForCityHall</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Daily</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <%= javascript_include_tag 'turbolinks', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <%= render  "shared/sidebar" %>
+        <%= render  "shared/top_navigation" %>
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <%= render  "shared/page_title" %>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+        <%= render  "shared/footer" %>
+      </div>
+    </div>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script type="text/javascript">
+      <% flash.each do |type, message| %>
+          new PNotify({
+              title: '<%= notification_color(type) %>',
+              text: '<%= message %>',
+              type: '<%= notification_color(type) %>',
+              styling: 'bootstrap3'
+          });
+      <% end %>
+      <%= yield :javascripts %>
+    </script>
   </body>
 </html>
