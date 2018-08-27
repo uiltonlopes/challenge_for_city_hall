@@ -1,0 +1,12 @@
+<% flash.each do |type, message| %>
+  new PNotify({
+              title: '<%= notification_color(type) %>',
+              text: '<%= message %>',
+              type: '<%= notification_color(type) %>',
+              styling: 'bootstrap3'
+          });
+    
+    table_member.fnDraw();
+<% end %>
+
+<% flash.discard  %>

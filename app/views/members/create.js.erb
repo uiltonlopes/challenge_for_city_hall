@@ -1,0 +1,16 @@
+<% flash.each do |type, message| %>
+  new PNotify({
+              title: '<%= notification_color(type) %>',
+              text: '<%= message %>',
+              type: '<%= notification_color(type) %>',
+              styling: 'bootstrap3'
+          });
+    
+  $('#add-member').modal('hide');
+  $('.dataTable').each(function() {
+    dt = $(this).dataTable();
+    dt.fnDraw();
+  });
+<% end %>
+
+<% flash.discard  %>

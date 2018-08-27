@@ -1,0 +1,32 @@
+<div id="add-member" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel2">Funcionário</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <%= simple_form_for @member, remote: true, html: { class: "form-horizontal form-label-left" }, wrapper: false do |f| %>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="member[email]">Nome<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.input :email , placeholder:"Nome", label: false, wrapper: false,input_html: { :class => "form-control col-md-7 col-xs-12" },required: true %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="member[team]">Equipe <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <%= f.association :team, collection: Team.all.order(:name), prompt: "Escolha uma Equipe", label: false, wrapper: false,input_html: { :class => "form-control col-md-7 col-xs-12" },required: true %>
+                        </div>
+                    </div>											  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default float-right" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

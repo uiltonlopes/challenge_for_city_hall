@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team = team.find(params[:id])
+    @team = Team.find(params[:id])
     begin
       if @team.delete
         flash[:success] = 'Equipe deletada com sucesso!'
