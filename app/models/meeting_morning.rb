@@ -1,0 +1,2 @@
+class MeetingMorning < ApplicationRecord
+end

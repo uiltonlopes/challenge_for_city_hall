@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_211202) do
+ActiveRecord::Schema.define(version: 2018_08_27_222818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "meetings", force: :cascade do |t|
+  create_table "meeting_afternoons", force: :cascade do |t|
     t.bigint "member_id"
-    t.string "message"
+    t.string "message_one"
+    t.string "message_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_meetings_on_member_id"
+    t.index ["member_id"], name: "index_meeting_afternoons_on_member_id"
+  end
+
+  create_table "meeting_mornings", force: :cascade do |t|
+    t.bigint "member_id"
+    t.string "message_one"
+    t.string "message_two"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_meeting_mornings_on_member_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -53,7 +63,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_211202) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "meetings", "members"
+  add_foreign_key "meeting_afternoons", "members"
+  add_foreign_key "meeting_mornings", "members"
   add_foreign_key "members", "teams"
   add_foreign_key "members", "users"
   add_foreign_key "teams", "users"
