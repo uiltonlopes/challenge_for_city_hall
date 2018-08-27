@@ -3,6 +3,10 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.json { render json: TeamDatatable.new(view_context, user: current_user) }
+    end
   end
 
   def show
@@ -30,7 +34,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-     @team = team.find(params[:id])
+     @team = Team.find(params[:id])
     begin
       if @team.update_attributes(team_params)
         flash[:success] = 'Equipe atualizada com sucesso!'
