@@ -22,7 +22,7 @@ Esta aplicação tem como objetivo guardar os resultados das “daily meetings�
 **Siga os seguintes passos**
 
 ```
-git clone https://Uiltonlopes@bitbucket.org/Uiltonlopes/challenge_for_city_hall.git
+git clone https://github.com/uiltonlopes/challenge_for_city_hall.git
 ```
 ```
 cd challenge_for_city_hall
