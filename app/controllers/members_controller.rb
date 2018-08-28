@@ -46,6 +46,8 @@ class MembersController < ApplicationController
 
   def destroy
     @member = Member.find(params[:id])
+    @member.meeting_mornings.delete_all
+    @member.meeting_afternoons.delete_all
     begin
       if @member.delete
         flash[:success] = 'Membro deletada com sucesso!'
