@@ -9,6 +9,13 @@ class MeetingMorningsController < ApplicationController
 
     def new
         @meeting = MeetingMorning.new
+        @meetings = MeetingMorning.where(member_id: params[:id]).last
+        if @meetings
+            if @meetings.created_at.beginning_of_day == Time.zone.now.beginning_of_day
+                redirect_to meeting_mornings_path(params[:id])
+                flash[:success] = 'Você ja cadastrou a resposta de hoje!'
+            end
+        end
     end
 
     def create
