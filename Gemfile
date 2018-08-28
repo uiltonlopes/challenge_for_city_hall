@@ -14,6 +14,8 @@ gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
 # Datatable
 gem 'ajax-datatables-rails'
 
+gem 'rufus-scheduler', '~> 3.2'
+
 gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
