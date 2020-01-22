@@ -16,7 +16,7 @@ gem 'ajax-datatables-rails'
 
 gem 'rufus-scheduler', '~> 3.2'
 
-gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
