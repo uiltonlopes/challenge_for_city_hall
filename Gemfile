@@ -3,14 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-gem 'devise'
+gem "devise", ">= 4.7.1"
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'jquery-rails'
 
 gem 'rails-sweetalert2-confirm'
-gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
+# gem 'rails-assets-sweetalert2', source: 'http://rails-assets.org'
 # Datatable
 gem 'ajax-datatables-rails'
 
